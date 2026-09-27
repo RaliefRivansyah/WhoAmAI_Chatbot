@@ -8,18 +8,17 @@ Script ini adalah versi .py dari materi yang sudah dibedah di sesi LangChain:
 - Blok 4: RAG Chain (Context Injection, chain final)
 
 Knowledge document di sini pakai 3 artikel berita asli soal RUU Pelindungan
-Ketenagakerjaan (September 2026), disimpan sebagai file .pdf di folder
+Ketenagakerjaan (September 2026), disimpan sebagai file .txt di folder
 knowledge_docs/.
 
-Loader PDF-nya pakai PyMuPDF4LLMLoader dari package langchain-pymupdf4llm,
-package resmi terpisah (bukan dari langchain_community yang sudah sunset).
+Loader teks-nya pakai TextLoader dari package langchain-community.
 
 Cara jalanin:
     python rag_chatbot.py
 
 Prasyarat:
     - File .env berisi GROQ_API_KEY di folder yang sama dengan script ini
-    - Folder knowledge_docs/ berisi file .pdf yang mau dijadikan sumber
+    - Folder knowledge_docs/ berisi file .txt yang mau dijadikan sumber
     - Package sudah terinstall (lihat requirements di bagian bawah file)
 """
 
@@ -33,7 +32,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain_core.documents import Document
-from langchain_pymupdf4llm import PyMuPDF4LLMLoader
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 
@@ -43,12 +42,12 @@ from langchain_chroma import Chroma
 # ============================================================
 
 CHAT_MODEL = "openai/gpt-oss-120b"
-COLLECTION_NAME = "ruu_ketenagakerjaan"
+COLLECTION_NAME = "chatbot_history"
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 100
 TOP_K = 8
 
-# Folder berisi knowledge document. Semua file .pdf di dalamnya akan
+# Folder berisi knowledge document. Semua file .txt di dalamnya akan
 # dianggap sebagai satu sumber pengetahuan terpisah.
 KNOWLEDGE_DIR = "./knowledge_docs"
 
@@ -76,32 +75,27 @@ def buat_model() -> ChatGroq:
 
 def muat_dokumen(folder: str) -> list[Document]:
     """
-    Load semua file .pdf di dalam folder jadi list of Document, pakai
-    PyMuPDF4LLMLoader langsung dari library LangChain (langchain-pymupdf4llm).
+    Load semua file .txt di dalam folder jadi list of Document, pakai
+    TextLoader dari package langchain-community.
 
-    Setiap file di-load lewat loader resmi ini, jadi kita tidak perlu
-    menulis logika parsing PDF sendiri, cukup panggil .load() untuk
-    masing-masing file lalu digabung jadi satu list.
+    Setiap file di-load lewat loader ini, jadi isi file dan metadata sumber
+    dikemas menjadi Document tanpa perlu menulis parsing sendiri.
     """
     daftar_dokumen = []
-    path_file = sorted(glob.glob(os.path.join(folder, "*.pdf")))
-    # glob.glob(...) bertugas mencari file yang sudah ditentukan di os.path.join(), 
+    path_file = sorted(glob.glob(os.path.join(folder, "*.txt")))
+    # glob.glob(...) bertugas mencari file yang sudah ditentukan di os.path.join(),
     # dan hasilnya berupa daftar nama file yang cocok, dalam bentuk list Python.
 
     if not path_file:
         raise FileNotFoundError(
-            f"Tidak ada file .pdf ditemukan di folder '{folder}'. "
+            f"Tidak ada file .txt ditemukan di folder '{folder}'. "
             "Pastikan folder knowledge_docs/ berisi file sumber."
         )
 
     for path in path_file:
-        # mode="single" -> satu file PDF jadi satu Document (bukan per halaman).
-        # use_layout=False -> ekstraksi teks polos, tanpa mesin deteksi layout/
-        # OCR yang tidak perlu untuk PDF berbasis teks seperti artikel ini
-        # (mempercepat proses dan menghindari pesan "Using Tesseract..." di
-        # konsol yang bisa bikin peserta bingung).
-        loader = PyMuPDF4LLMLoader(file_path=path, mode="single", use_layout=False)
-        daftar_dokumen.extend(loader.load())
+        loader = TextLoader(path, encoding="utf-8")
+        dokumen = loader.load()
+        daftar_dokumen.extend(dokumen)
 
     return daftar_dokumen
 
@@ -138,6 +132,8 @@ def bangun_vectorstore(dokumen: list) -> Chroma:
 
 def format_docs(daftar_dokumen: list[Document]) -> str:
     """Gabungkan beberapa chunk hasil retrieval jadi satu teks konteks."""
+    if not daftar_dokumen:
+        return "Tidak ada informasi yang relevan ditemukan dalam dokumen."
     return "\n\n".join(dok.page_content for dok in daftar_dokumen)
 
 def muat_system_prompt(path: str) -> str:

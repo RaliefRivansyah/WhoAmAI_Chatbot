@@ -1,0 +1,225 @@
+PERSONAL AI KNOWLEDGE BASE
+Full Name: Ralief Langga Rivansyah Preferred Name: Ralief
+Location: Jakarta, Indonesia
+Phone Number: +62821-4198-2614 Email: ralief.rivansyah@gmail.com
+LinkedIn: https://www.linkedin.com/in/ralieflangga/ 
+GitHub: https://github.com/RaliefRivansyah
+Portfolio: https://ralief-portofolio.vercel.app/
+
+01	— PROFILE
+Short Introduction
+Ralief Langga Rivansyah is a Frontend Engineer with 2+ years of experience building responsive and user-focused web applications. He works primarily with React, Next.js,
+TypeScript, and Tailwind CSS. His experience includes translating UI designs into production-ready interfaces, optimizing performance, ensuring cross-browser
+compatibility, and collaborating with designers and backend engineers to deliver scalable products.
+Professional Focus
+•	Frontend web development
+•	Responsive web applications
+•	User-focused interfaces
+•	UI implementation
+•	Performance optimization
+•	Cross-browser compatibility
+•	Reusable component architecture
+•	Collaboration with designers and backend engineers
+ 
+02	— ABOUT ME
+Who Am I?
+Ralief Langga Rivansyah is a Frontend Engineer based in Jakarta, Indonesia, with experience developing responsive web applications and Android applications.
+His frontend experience includes React, Next.js, JavaScript, Tailwind CSS, HTML5, CSS3, and Bootstrap.
+He also has experience with backend technologies, databases, APIs, and development tools.
+Background
+Ralief studied Computer Science at Universitas Bina Nusantara Malang from September 2018 to August 2025. He also completed the Full Stack JavaScript Immersive Program at Hacktiv8 from September 2025 to December 2025.
+
+03	— EDUCATION
+Universitas Bina Nusantara Malang
+Degree: Bachelor of Computer Science Location: Malang, Indonesia
+Period: September 2018 – August 2025 Hacktiv8
+Program: Full Stack JavaScript Immersive Program Location: Jakarta, Indonesia
+Period: September 2025 – December 2025
+
+04	— WORK EXPERIENCE
+Gloeshoes Leather — Mobile Developer Location: Malang, Indonesia
+Period: February 2023 – August 2024 Responsibilities & Contributions
+•	Developed responsive and scalable Android applications using Android Studio.
+•	Delivered production-ready solutions for internal operations and customer-facing platforms.
+•	Implemented secure authentication using Firebase Authentication.
+•	Implemented real-time data synchronization using Cloud Firestore.
+•	Integrated applications with backend services.
+•	Contributed across the full application lifecycle.
+•	Worked on mobile UI development, backend integration, database management, testing, and deployment.
+Technologies
+•	Android Studio
+•	Firebase Authentication
+•	Cloud Firestore
+
+Gloeshoes Leather — FrontEnd Web Developer Location: Malang, Indonesia
+Period: February 2021 – January 2022 Responsibilities & Contributions
+•	Developed responsive web applications using HTML, CSS, Bootstrap, and JavaScript.
+•	Integrated MySQL databases into production applications.
+•	Ensured reliable data storage and retrieval.
+•	Improved UI consistency.
+•	Improved cross-browser compatibility across Chrome, Firefox, Edge, and Safari. 
+Technologies
+•	HTML
+•	CSS
+•	Bootstrap
+•	JavaScript
+•	MySQL
+
+05	— TECHNICAL SKILLS
+Frontend React
+Used For: Building web applications and interactive user interfaces. Projects: Kavenue, AI DnD
+Next.js
+Used For: Building responsive web applications. Projects: Kavenue, Wangkost
+React Native
+Listed as a frontend technology in Ralief's technical skills. TypeScript
+Used across multiple projects, including Kavenue, Wangkost, and AI DnD. JavaScript
+Used for frontend web development and listed as a core technical skill. HTML5 / CSS3
+Used for building responsive web interfaces.
+
+Styling
+•	Tailwind CSS
+•	Bootstrap
+
+Backend & Databases
+•	Node.js
+•	Express.js
+ 
+•	REST API
+•	GraphQL
+•	PostgreSQL
+•	MongoDB
+•	Firebase
+•	Redis
+
+Development Tools
+•	Git
+•	Figma
+•	Vite
+•	Prettier
+All technical skills above are listed directly in the CV.
+
+06	— PROJECTS
+Kavenue — Wishlist Management Web Application Date: December 2025
+Type: Web Application Overview
+Kavenue is a responsive wishlist management web application. My Contribution
+Ralief built the wishlist management interface using Next.js, React, and TypeScript. Technologies
+•	Next.js
+•	React
+•	TypeScript
+ 
+Key Features / Implementation
+•	Responsive wishlist management interface
+•	Reusable components
+•	Client-side routing Additional Information
+Problem statement, development challenges, design decisions, results, and lessons learned are not specified in the CV.
+
+Wangkost — Hostel Management Web Application Date: December 2025
+Type: Web Application Overview
+Wangkost is a hostel/property management web application featuring a responsive management dashboard.
+My Contribution
+Ralief developed the property management dashboard using Next.js and TypeScript. Technologies
+•	Next.js
+•	TypeScript
+Key Features / Implementation
+•	Responsive property management dashboard
+•	Reusable UI components
+•	Dynamic forms
+•	Role-based navigation Additional Information
+Problem statement, development challenges, design decisions, results, and lessons learned are not specified in the CV.
+ 
+AI DnD — Interactive Web Application with AI Date: November 2025
+Type: Interactive Web Application Overview
+AI DnD is a web-based RPG platform using AI as a dynamic Game Master to generate real-time narratives, NPCs, and encounters.
+My Contribution
+Ralief built the interactive real-time web application using React, TypeScript, and Socket.IO.
+Technologies
+•	React
+•	TypeScript
+•	Socket.IO
+Key Features / Implementation
+•	Real-time interaction
+•	Dynamic UI updates
+•	Responsive gameplay interfaces Additional Information
+The CV does not provide further information about the AI implementation, architecture, gameplay mechanics, challenges, or results.
+
+07	— WORK STYLE
+Documented Working Approach
+Based on the CV, Ralief has experience with:
+•	Translating UI designs into production-ready interfaces.
+•	Building reusable component architectures.
+ 
+•	Developing responsive interfaces.
+•	Optimizing application performance.
+•	Ensuring cross-browser compatibility.
+•	Collaborating with designers and backend engineers.
+•	Contributing across the application lifecycle. Collaboration
+The CV states that Ralief is comfortable collaborating with designers and backend engineers to deliver scalable products.
+
+08	— CAREER DIRECTION
+Current Professional Identity Frontend Engineer
+Primary Technical Focus
+•	React
+•	Next.js
+•	TypeScript
+•	JavaScript
+•	Tailwind CSS
+•	Responsive web development Broader Technical Background
+Ralief also has experience with mobile development, backend technologies, databases, APIs, and development tooling.
+Preferred Work Environment
+Collaborative & Adaptive: Thrive in open, communicative, and fast-paced environments that encourage continuous learning, innovation, and teamwork.
+ 
+Output-Driven & Flexible: Prefer structured yet agile workflows with autonomy in problem-solving, focusing on delivery, code quality, and practical impact.
+
+09	— ACHIEVEMENTS & CERTIFICATIONS
+Elskill TOEFL
+Validity: Until June 2027 Certificate: ES346735
+HackerRank
+Issued: December 2025 Certificates / Skills
+•	CSS
+•	Software Engineer
+•	React
+•	JavaScript
+•	Problem Solving
+
+10 — FREQUENTLY ASKED QUESTIONS
+Who is Ralief Langga Rivansyah?
+Ralief Langga Rivansyah is a Frontend Engineer with 2+ years of experience building responsive and user-focused web applications.
+What does Ralief specialize in?
+His primary focus is frontend development, particularly building responsive web
+applications using technologies such as React, Next.js, TypeScript, and Tailwind CSS. What are Ralief's main technical skills?
+His listed frontend skills include React, Next.js, React Native, TypeScript, JavaScript, Tailwind CSS, HTML5, and CSS3. He also has experience with backend technologies, databases, APIs, and development tools.
+What projects has Ralief built?
+ 
+The CV lists three projects:
+•	Kavenue — Wishlist Management Web Application
+•	Wangkost — Hostel Management Web Application
+•	AI DnD — Interactive Web Application with AI
+What is Ralief's experience outside frontend development?
+Ralief worked as a Mobile Developer at Gloeshoes Leather, developing Android applications and working with authentication, real-time synchronization, backend integration, database management, testing, and deployment.
+What kind of web development experience does Ralief have?
+He developed responsive web applications using HTML, CSS, Bootstrap, and JavaScript, and has experience with React, Next.js, TypeScript, Tailwind CSS, reusable components, client-side routing, dynamic forms, and role-based navigation.
+What is Ralief's educational background?
+He holds a Bachelor of Computer Science from Universitas Bina Nusantara Malang and completed the Full Stack JavaScript Immersive Program at Hacktiv8.
+
+11 — PERSONAL PREFERENCES
+Hobbies & Non-Professional Interests: Enthusiastic gamer (PC, First Person Shooter, and open-world exploration), passionate about competitive gaming.
+Learning Preferences: hands-on learner, leveraging technical documentation, project-based experimentation, and practical case studies.
+Work Preference & Style: Logical problem-solver with a collaborative mindset, highly adaptable to dynamic.
+
+12 — LINKS & CONTACT
+Email: ralief.rivansyah@gmail.com
+LinkedIn: https://www.linkedin.com/in/ralieflangga/ GitHub: https://github.com/RaliefRivansyah
+Portfolio: https://ralief-portofolio.vercel.app/
+ 
+13 — AI RESPONSE GUIDELINES
+When answering questions about Ralief:
+1.	Use this document as the primary source.
+2.	Do not invent experience, skills, projects, achievements, or personal information.
+3.	If information is not available, explicitly state that it is not documented in the knowledge base.
+4.	Distinguish between documented facts and assumptions.
+5.	When discussing a project, prioritize the information under that project's section.
+6.	Do not infer personal preferences that are not explicitly documented.
+7.	Do not claim specific responsibilities that are not stated in the source.
+8.	Keep responses concise unless the user requests more detail.
+9.	When appropriate, provide the relevant portfolio, GitHub, LinkedIn, or project link.
+10.	If a question requires information that is missing, say that the information is not currently available rather than generating an answer.

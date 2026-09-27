@@ -25,24 +25,10 @@ st.set_page_config(
     page_icon=":material/gavel:",
 )
 
-# ============================================================
-# 2. CEK API KEY
-# ============================================================
-# Di laptop, GROQ_API_KEY dibaca dari file .env.
-# Di Streamlit Cloud, GROQ_API_KEY diisi lewat menu Secrets, dan Streamlit
-# otomatis menjadikannya environment variable. Jadi kode yang sama ini
-# jalan di dua tempat tanpa perlu diubah.
-
 load_dotenv()
-if not os.getenv("GROQ_API_KEY"):
-    st.error(
-        "GROQ_API_KEY belum diisi. Cek file .env (di laptop) "
-        "atau menu Secrets (di Streamlit Cloud)."
-    )
-    st.stop()
 
-    # ============================================================
-# 3. SIAPKAN MESIN CHATBOT (sekali saja, lalu disimpan)
+# ============================================================
+# 2. SIAPKAN MESIN CHATBOT (sekali saja, lalu disimpan)
 # ============================================================
 # Streamlit menjalankan ulang SELURUH file ini dari atas setiap kali
 # pengguna berinteraksi (misalnya mengirim pertanyaan).
@@ -59,12 +45,79 @@ def siapkan_chatbot():
     system_prompt = muat_system_prompt(SYSTEM_PROMPT_PATH)
     return buat_rag_chain(retriever, model, system_prompt)
 
+# ============================================================
+# 3. LANDING PAGE
+# ============================================================
+
+if "halaman" not in st.session_state:
+    st.session_state.halaman = "landing"
+
+if st.session_state.halaman == "landing":
+    st.markdown(
+        """
+        <style>
+        .landing-kicker {
+            color: #fbbf24;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .landing-title {
+            margin: 0.4rem 0 1rem;
+            font-size: clamp(2.7rem, 8vw, 5.5rem);
+            line-height: 0.98;
+            font-weight: 850;
+            letter-spacing: -0.06em;
+            background: linear-gradient(180deg, #fffdf8, #fcd34d 55%, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .landing-copy {
+            max-width: 42rem;
+            color: #d5dbe3;
+            font-size: 1.12rem;
+            line-height: 1.7;
+        }
+        </style>
+        <div style="padding: 4.5rem 0 2rem;">
+            <div class="landing-kicker">Personal AI Profile</div>
+            <div class="landing-title">WhoAmAI</div>
+            <div class="landing-copy">
+                WhoAmAI membantu Anda mengenal Ralief Langga Rivansyah melalui percakapan yang
+                sederhana.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown("<div style='height: 1.5rem'></div>", unsafe_allow_html=True)
+    if st.button("Mulai ngobrol  →", type="primary", use_container_width=False):
+        st.session_state.halaman = "chat"
+        st.rerun()
+    st.caption("Tanyakan tentang profil, pengalaman kerja, pendidikan, atau projek.")
+    st.stop()
+
+# ============================================================
+# 4. CEK API KEY
+# ============================================================
+# Di laptop, GROQ_API_KEY dibaca dari file .env.
+# Di Streamlit Cloud, GROQ_API_KEY diisi lewat menu Secrets, dan Streamlit
+# otomatis menjadikannya environment variable.
+
+if not os.getenv("GROQ_API_KEY"):
+    st.error(
+        "GROQ_API_KEY belum diisi. Cek file .env (di laptop) "
+        "atau menu Secrets (di Streamlit Cloud)."
+    )
+    st.stop()
 
 rag_chain = siapkan_chatbot()
 
-
 # ============================================================
-# 4. BUKU CATATAN PERCAKAPAN
+# 5. BUKU CATATAN PERCAKAPAN
 # ============================================================
 # st.session_state adalah tempat menyimpan data yang tidak ikut hilang
 # saat file ini dijalankan ulang. Di sini dipakai untuk mencatat riwayat
@@ -75,7 +128,7 @@ if "riwayat" not in st.session_state:
     st.session_state.riwayat = []
 
 # ============================================================
-# 5. TAMPILAN
+# 6. TAMPILAN
 # ============================================================
 
 with st.sidebar:
