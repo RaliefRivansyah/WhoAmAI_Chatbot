@@ -44,8 +44,8 @@ from langchain_chroma import Chroma
 
 CHAT_MODEL = "openai/gpt-oss-120b"
 COLLECTION_NAME = "ruu_ketenagakerjaan"
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 50
+CHUNK_SIZE = 800
+CHUNK_OVERLAP = 100
 TOP_K = 8
 
 # Folder berisi knowledge document. Semua file .pdf di dalamnya akan
